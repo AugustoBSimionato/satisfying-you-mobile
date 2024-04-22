@@ -2,7 +2,7 @@
 
 ## Descrição
 
-App híbrido desenvolvido na disciplina de Programação para Dispositivos Móveis
+App híbrido desenvolvido na disciplina de Programação para Dispositivos Móveis.
 
 ## Alunos
 
