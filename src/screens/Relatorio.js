@@ -1,66 +1,91 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image} from 'react-native';
+import { Text, View, StyleSheet, Dimensions } from 'react-native';
+import { Provider as PaperProvider, DefaultTheme } from 'react-native-paper';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import Teste from '../components/Chart';
 
-const Relatorio = (props) => {
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: '#372775',
+    secondary: 'gray',
+  },
+};
+
+const windowWidth = Dimensions.get('window').width;
+
+const Relatorio = () => {
   const data = [
-    { caption: 'Excelente', color: '#F1CE7E' },
-    { caption: 'Bom', color: '#6994FE' },
-    { caption: 'Neutro', color: '#5FCDA4' },
-    { caption: 'Ruim', color: '#EA7288' },
-    { caption: 'Péssimo', color: '#53D8D8' },
+    { name: 'Excelente', color: '#F1CE7E' },
+    { name: 'Bom', color: '#6994FE' },
+    { name: 'Neutro', color: '#5FCDA4' },
+    { name: 'Ruim', color: '#EA7288' },
+    { name: 'Péssimo', color: '#53D8D8' },
   ];
 
   return (
-    <View style={styles.container}>
-    <Image
-        source={require('../../assets/images/pizza.png')}
-        style={styles.image}
-      />
-      <View style={styles.legenda}>
-        {data.map((item, index) => (
-          <View key={index} style={styles.legendaInside}>
-            <View
-              style={{
-                width: 20,
-                height: 20,
-                backgroundColor: item.color,
-                marginRight: 8,
-              }}
-            />
-            <Text style={styles.legendaTexto}>{item.caption}</Text>
+    <PaperProvider theme={theme}>
+      <View style={styles.container}>
+        <View style={styles.chartContainer}>
+          <View style={styles.chart}>
+            <Teste />
           </View>
-        ))}
+          <View style={styles.chartLabelsContainer}>
+            {data.map((label, index) => (
+              <View style={styles.labelsContainer} key={index}>
+                <Icon
+                  name="square"
+                  size={windowWidth > 600 ? 50 : 30}
+                  color={label.color}
+                  style={styles.image}
+                />
+                <Text style={[styles.text, { fontSize: windowWidth > 600 ? 16 : 14 }]}>
+                  {label.name}
+                </Text>
+              </View>
+            ))}
+          </View>
+        </View>
       </View>
-    </View>
+    </PaperProvider>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#372775',
     flex: 1,
-    flexDirection: 'row',
-    paddingHorizontal: '5%',
-    justifyContent: 'space-between',
+    backgroundColor: '#372775',
+    padding: 20,
+    justifyContent: 'center',
     alignItems: 'center',
   },
-  image: {
-    width: 300,
-    height: 300,
-    marginHorizontal: 20,
-  },
-  legenda: {
-    flexDirection: 'column',
-    marginHorizontal: 150,
-
-  },
-  legendaInside: {
+  chartContainer: {
     flexDirection: 'row',
+    alignItems: 'center',
   },
-  legendaTexto: {
-    fontSize: 20,
-    textAlign: 'left',
-    color: '#FFFFFF',
+  chart: {
+    flex: 1,
+  },
+  chartLabelsContainer: {
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    marginLeft: 20,
+  },
+  labelsContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  image: {
+    height: 50,
+    width: 50,
+  },
+  text: {
+    fontFamily: 'AveriaLibre-Bold',
+    color: '#ffffff',
+    textAlign: 'center',
+    marginLeft: 10,
   },
 });
 

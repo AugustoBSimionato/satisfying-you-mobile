@@ -17,7 +17,7 @@ const Login = (props) => {
   };
 
   const goToHome = () => {
-    props.navigation.navigate('Drawer');
+    props.navigation.navigate('Relatorio');
   };
 
   const goToNewAccount = () => {
