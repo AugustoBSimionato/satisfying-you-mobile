@@ -1,35 +1,43 @@
-import React, { useState } from 'react';
-import {StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
-import { useRoute } from '@react-navigation/native';
+import React, { useEffect } from 'react';
+import { Text, View, StyleSheet } from 'react-native';
 
 const Agradecimento = (props) => {
-    
+  const goHome = () => {
+    props.navigation.navigate('Coleta')
+  }
+
+  useEffect(() => {
+    const timer = setTimeout(goHome, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-        <View style={styles.container}>
-           <Text style={styles.titulo}>Obrigado por participar da pesquisa!</Text>
-           <Text style={styles.titulo} >Aguardamos você no próximo ano!</Text>
-        </View>
+    <View style={styles.backgroundView}>
+      <View style={styles.content}>
+        <Text style={styles.text}>Obrigado por participar da pesquisa!</Text>
+        <Text style={styles.text}>Aguardamos você no próximo ano!</Text>
+      </View>
+    </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
-    container:{
-      backgroundColor: '#372775',
-      color: '#FFFFFF',
-      flex: 1,
-      flexDirection: 'column',
-      paddingHorizontal: '5%',
-      width: '100%',
-      height: 'auto',
-      justifyContent: 'center',
-      alignItems: 'center'
-    },
-  titulo: {
-    color: '#FFFFFF',
-    fontSize: 21,
-    marginTop: 10,
-    fontFamily: 'AveriaLibre-Regular'
-
+  backgroundView: {
+    flex: 1,
+    backgroundColor: '#372775',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  content: {
+    alignItems: 'center',
+  },
+  text: {
+    fontFamily: 'AveriaLibre-Bold',
+    fontSize: 22,
+    color: '#ffffff',
+    textAlign: 'center',
+    marginBottom: 10,
   },
 });
 

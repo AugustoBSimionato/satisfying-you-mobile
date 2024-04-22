@@ -11,7 +11,7 @@ const Coleta = (props) => {
   ];
 
   const goThanks = () => {
-    props.navigation.navigate('AgradecimentoParticipacao')
+    props.navigation.navigate('Agradecimento')
   }
 
   return (
