@@ -17,7 +17,7 @@ const Login = (props) => {
   };
 
   const goToHome = () => {
-    props.navigation.navigate('AcoesPesquisa');
+    props.navigation.navigate('Drawer');
   };
 
   const goToNewAccount = () => {

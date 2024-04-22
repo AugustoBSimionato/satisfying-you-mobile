@@ -10,6 +10,7 @@ import ModificarPesquisa from './src/screens/ModificarPesquisa';
 import Relatorio from './src/screens/Relatorio';
 import PopUp from './src/screens/PopUp';
 import AcoesPesquisa from './src/screens/AcoesPesquisa';
+import Drawer from './src/screens/Drawer';
 
 const Stack = createStackNavigator()
 
@@ -26,6 +27,7 @@ const App = () => {
         <Stack.Screen name="ModificarPesquisa" component={ModificarPesquisa} options={{headerTitle: 'Modificar Pesquisa'}}/>
         <Stack.Screen name="AcoesPesquisa" component={AcoesPesquisa} options={{headerTitle: 'Carnaval'}}/>
         <Stack.Screen name="Relatorio" component={Relatorio}/>
+        <Stack.Screen name="Drawer" component={Drawer} options={{headerShown: false}}/>
         <Stack.Screen name="PopUp" component={PopUp} options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
