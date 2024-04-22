@@ -3,9 +3,12 @@ import {StyleSheet, View, Text, TouchableOpacity, Modal}from 'react-native';
 
 const PopUp = (props) => {
   
-  const goToModificarPesquisa = () => {
-    props.navigation.navigate('ModificarPesquisa');
-  }
+  const cancel = () => {
+    props.navigation.pop();
+  };
+  const yes = () => {
+    props.navigation.navigate('Drawer');
+  };
 
   return (
         <Modal
@@ -17,10 +20,10 @@ const PopUp = (props) => {
           <View style={styles.containerInside}>
             <Text style={styles.titulo}>Tem certeza de apagar essa pesquisa?</Text>
               <View style={styles.buttonsContainer}>
-                  <TouchableOpacity style={styles.buttonContainer}  onPress={goToModificarPesquisa} >
+                  <TouchableOpacity style={styles.buttonContainer}  onPress={yes} >
                       <Text style={[styles.button, {backgroundColor:'#FF8383',}]}>SIM</Text>
                   </TouchableOpacity>
-                  <TouchableOpacity style={styles.buttonContainer}  onPress={goToModificarPesquisa} >
+                  <TouchableOpacity style={styles.buttonContainer}  onPress={cancel} >
                       <Text style={[styles.button, {backgroundColor:'#3F92C5',}]}>CANCELAR</Text>
                   </TouchableOpacity>
               </View>
