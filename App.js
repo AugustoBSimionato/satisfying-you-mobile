@@ -8,6 +8,7 @@ import Agradecimento from './src/screens/Agradecimento';
 import NovaPesquisa from './src/screens/NovaPesquisa';
 import ModificarPesquisa from './src/screens/ModificarPesquisa';
 import Relatorio from './src/screens/Relatorio';
+import PopUp from './src/screens/PopUp';
 
 const Stack = createStackNavigator()
 
@@ -23,6 +24,7 @@ const App = () => {
         <Stack.Screen name="NovaPesquisa" component={NovaPesquisa} options={{headerTitle: 'Nova Pesquisa'}}/>
         <Stack.Screen name="ModificarPesquisa" component={ModificarPesquisa} options={{headerTitle: 'Modificar Pesquisa'}}/>
         <Stack.Screen name="Relatorio" component={Relatorio}/>
+        <Stack.Screen name="PopUp" component={PopUp} options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

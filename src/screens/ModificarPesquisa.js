@@ -29,6 +29,10 @@ const ModificarPesquisa = props => {
     props.navigation.navigate('Home');
   };
 
+  const goToPopUp = () => {
+    props.navigation.navigate('PopUp');
+  };
+
   return (
     <ScrollView contentContainerStyle={estilos.scrollView}>
       <View style={estilos.backgroundView}>
@@ -73,7 +77,7 @@ const ModificarPesquisa = props => {
           </TouchableOpacity>
         </View>
         <View style={estilos.cBotaoDeletar}>
-          <TouchableOpacity style={estilos.botaoDeletar}>
+          <TouchableOpacity style={estilos.botaoDeletar} onPress={goToPopUp}>
             <Icon2 name="trash-can-outline" size={50} color="white" />
             <Text style={estilos.texto}>Apagar</Text>
           </TouchableOpacity>
