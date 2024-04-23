@@ -26,7 +26,7 @@ const App = () => {
         <Stack.Screen name="NovaPesquisa" component={NovaPesquisa} options={{headerTitle: 'Nova Pesquisa'}}/>
         <Stack.Screen name="ModificarPesquisa" component={ModificarPesquisa} options={{headerTitle: 'Modificar Pesquisa'}}/>
         <Stack.Screen name="AcoesPesquisa" component={AcoesPesquisa} options={{headerTitle: 'Carnaval'}}/>
-        <Stack.Screen name="Relatorio" component={Relatorio}/>
+        <Stack.Screen name="Relatorio" component={Relatorio} options={{headerTitle: 'Relatório'}}/>
         <Stack.Screen name="Drawer" component={Drawer} options={{headerShown: false}}/>
         <Stack.Screen name="PopUp" component={PopUp} options={{headerShown: false}}/>
       </Stack.Navigator>
