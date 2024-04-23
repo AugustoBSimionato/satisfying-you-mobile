@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View, StyleSheet, Dimensions } from 'react-native';
 import { Provider as PaperProvider, DefaultTheme } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import Teste from '../components/Chart';
+import Chart from '../components/Chart';
 
 const theme = {
   ...DefaultTheme,
@@ -29,7 +29,7 @@ const Relatorio = () => {
       <View style={styles.container}>
         <View style={styles.chartContainer}>
           <View style={styles.chart}>
-            <Teste />
+            <Chart />
           </View>
           <View style={styles.chartLabelsContainer}>
             {data.map((label, index) => (
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#372775',
     padding: 20,
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     alignItems: 'center',
   },
   chartContainer: {
@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'flex-start',
     marginLeft: 20,
+    marginRight: 130,
   },
   labelsContainer: {
     flexDirection: 'row',
