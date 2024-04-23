@@ -22,7 +22,7 @@ const App = () => {
         <Stack.Screen name='NovaConta' component={NovaConta} options={{headerTitle: 'Nova Conta'}}/>
         <Stack.Screen name='RecuperarSenha' component={RecuperarSenha} options={{headerTitle: 'Recuperação de Senha'}}/>
         <Stack.Screen name='Coleta' component={Coleta} options={{headerTitle: ''}}/>
-        <Stack.Screen name="Agradecimento" component={Agradecimento} options={{headerShown: false}}/>
+        <Stack.Screen name="AgradecimentoParticipacao" component={Agradecimento} options={{headerShown: false}}/>
         <Stack.Screen name="NovaPesquisa" component={NovaPesquisa} options={{headerTitle: 'Nova Pesquisa'}}/>
         <Stack.Screen name="ModificarPesquisa" component={ModificarPesquisa} options={{headerTitle: 'Modificar Pesquisa'}}/>
         <Stack.Screen name="AcoesPesquisa" component={AcoesPesquisa} options={{headerTitle: 'Carnaval'}}/>

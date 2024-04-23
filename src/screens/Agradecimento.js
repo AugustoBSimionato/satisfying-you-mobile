@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
-const Agradecimento = (props) => {
+const AgradecimentoParticipacao = (props) => {
   const goHome = () => {
     props.navigation.navigate('Coleta')
   }
@@ -41,4 +41,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Agradecimento;
+export default AgradecimentoParticipacao;
