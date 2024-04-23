@@ -25,7 +25,7 @@ const NovaPesquisa = props => {
   };
 
   const goToHome = () => {
-    props.navigation.navigate('Home');
+    props.navigation.navigate('Drawer');
   };
 
   return (
